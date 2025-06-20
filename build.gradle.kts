@@ -18,6 +18,13 @@ allprojects {
     version = "${property("applicationVersion")}"
 
     repositories {
+        // 폐쇄망에서 사용할 Nexus 저장소 URL
+        maven {
+            url = uri(property("nexusUrl") as String)
+            // HTTP 사용을 허용합니다
+            isAllowInsecureProtocol = true
+        }
+        // 기본 중앙 저장소
         mavenCentral()
     }
 }
@@ -42,6 +49,7 @@ subprojects {
         implementation("org.jetbrains.kotlin:kotlin-reflect")
         implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
         implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+        implementation("com.github.ulisesbocchio:jasypt-spring-boot-starter:${property("jasyptVersion")}")
         testImplementation("org.springframework.boot:spring-boot-starter-test")
         testImplementation("com.ninja-squad:springmockk:${property("springMockkVersion")}")
         annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
@@ -49,15 +57,18 @@ subprojects {
     }
 
     tasks.getByName("bootJar") {
+        // 서브모듈에서는 실행 파일을 만들지 않음
         enabled = false
     }
 
     tasks.getByName("jar") {
+        // 일반 jar는 생성
         enabled = true
     }
 
     java.sourceCompatibility = JavaVersion.valueOf("VERSION_${property("javaVersion")}")
     tasks.withType<KotlinCompile> {
+        // Kotlin 컴파일러 옵션 설정
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
             jvmTarget = "${project.property("javaVersion")}"

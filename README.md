@@ -127,8 +127,17 @@ This setting makes it easier to run the `test code` out of the box.
 
 ```
 // Gradle Build and run with IntelliJ IDEA
-Build, Execution, Deployment > Build Tools > Gradle > Run tests using > IntelliJ IDEA	
+Build, Execution, Deployment > Build Tools > Gradle > Run tests using > IntelliJ IDEA
 ```
+
+## 폐쇄망 Nexus 연동
+Nexus 저장소를 사용하는 방법은 [`docs/폐쇄망_넥서스_연동.md`](docs/폐쇄망_넥서스_연동.md) 문서를 참고하세요.
+
+## 초기 세팅 가이드
+처음 프로젝트를 받았다면 [`docs/세팅_가이드.md`](docs/세팅_가이드.md) 문서를 참고하세요.
+
+## 코틀린 문법 정리
+코틀린을 처음 접하는 분들은 [`docs/코틀린_문법_정리.md`](docs/코틀린_문법_정리.md) 문서에서 기본 문법을 확인할 수 있습니다.
 
 ---
 
