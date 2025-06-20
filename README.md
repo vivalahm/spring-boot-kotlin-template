@@ -127,8 +127,11 @@ This setting makes it easier to run the `test code` out of the box.
 
 ```
 // Gradle Build and run with IntelliJ IDEA
-Build, Execution, Deployment > Build Tools > Gradle > Run tests using > IntelliJ IDEA	
+Build, Execution, Deployment > Build Tools > Gradle > Run tests using > IntelliJ IDEA
 ```
+
+## 폐쇄망 Nexus 연동
+Nexus 저장소를 사용하는 방법은 [`docs/폐쇄망_넥서스_연동.md`](docs/폐쇄망_넥서스_연동.md) 문서를 참고하세요.
 
 ---
 
