@@ -1,1 +1,1 @@
-// If you need a dependency, add it.
+// 필요한 의존성이 있다면 이곳에 추가하세요.
